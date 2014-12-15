@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Datos Públicos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="Content/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/pages/dashboard.css" rel="stylesheet" type="text/css" />    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+    <script type="text/javascript" src="Content/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="Content/js/chilecompra-dashboard.js"></script>
+    <script type="text/javascript" src="Content/js/chilecompra-graficos.js"></script>
+
+    <script type="text/javascript" src="Content/js/bootstrap.js"></script>
+    <script type="text/javascript" src="Content/js/chart.min.js"></script>
+    
+
+</head>
+<body>   
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container"> 
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                <a class="brand" href="index.html">Datos Públicos</a>
+        </div>
+      </div>
+    </div>
+    <br />
+    
+    <div class="main">
+      <div class="main-inner">
+        <div class="container">
+          <div class="row">
+            <div>
+                
+
+
+<div class="span12">
+    <center>
+        <h1>
+        ¿Qué está pasando hoy en MercadoPublico.cl?
+        
+        <br>
+        </h1><br />
+        
+        <h4>
+            <span id="spnfecha"></span> 
+            <br>
+            La información es actualizada cada 1 minuto.
+        </h4>
+        
+        <br>
+        
+        
+    </center>
+</div>
+
+<div class="span6">
+    <div class="widget widget-nopad">
+
+
+<div class="widget-header"> 
+    <i class="icon-list-alt"></i>
+    <h3>¿Qué está pasando hoy con las Licitaciones?</h3>
+</div>
+<div class="widget-content">
+    <div class="widget big-stats-container">
+        <div class="widget-content">
+            <div class="big_stats cf">
+                <div class="stat"><h5>Han cambiado de estado</h5>         <i class="shortcut-icon icon-bookmark"></i> <span id="TodasLc" class="value">0</span> </div>
+            </div>
+            <div class="big_stats cf">
+                <div class="stat"><h5>Se han publicado</h5>    <i class="shortcut-icon icon-bookmark"></i> <span id="Publicadas" class="value">0</span> </div>
+                <div class="stat"><h5>Se Han cerrado</h5>      <i class="shortcut-icon icon-bookmark"></i> <span id="Cerradas" class="value">0</span> </div>
+                <div class="stat"><h5>Se han desertado</h5>     <i class="shortcut-icon icon-bookmark"></i> <span id="Desiertas" class="value">0</span> </div>
+            </div>
+            <div class="big_stats cf">                        
+                <div class="stat"><h5">Se han adjudicado</h5>   <i class="shortcut-icon icon-bookmark"></i> <span id="Adjudicadas" class="value">0</span> </div>
+                <div class="stat"><h5">Se han revocado</h5>     <i class="shortcut-icon icon-bookmark"></i> <span id="Revocadas" class="value">0</span> </div>
+                <div class="stat"><h5">Se han suspendido</h5>   <i class="shortcut-icon icon-bookmark"></i> <span id="Suspendidas" class="value">0</span> </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="span6">
+    <div class="widget widget-nopad">
+
+
+<div class="widget-header"> 
+    <i class="icon-list-alt"></i>
+    <h3>¿Qué está pasando hoy con las Órdenes de Compra?</h3>
+</div>
+<div class="widget-content">
+    <div class="widget big-stats-container">
+        <div class="widget-content">
+            <div id="" class="big_stats cf">
+                <div class="stat"><h5>Han cambiado de estado</h5>    <i class="shortcut-icon icon-bookmark"></i> <span id="TodasOc" class="value">0</span> </div>
+            </div>
+            <div class="big_stats cf">
+                <div class="stat"><h5>Se han enviada a proveedor</h5>    <i class="shortcut-icon icon-bookmark"></i> <span id="EnviadaaProveedor" class="value">0</span> </div>
+                <div class="stat"><h5>Se han aceptado</h5>               <i class="shortcut-icon icon-bookmark"></i> <span id="Aceptada" class="value">0</span> </div>
+                <div class="stat"><h5>Se han cancelado</h5>              <i class="shortcut-icon icon-bookmark"></i> <span id="Cancelada" class="value">0</span> </div>
+            </div>
+            <div id="" class="big_stats cf">                        
+                <div class="stat"><h5>Se han recepcionado</h5>  <i class="shortcut-icon icon-bookmark"></i> <span id="RecepcionConforme" class="value">0</span> </div>
+                <div class="stat"><h5>Están pendiente de recepcionar</h5>     <i class="shortcut-icon icon-bookmark"></i> <span id="PendientedeRecepcionar" class="value">0</span> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="container">
+          <div class="row">
+            <div class="span12"> &copy; 2014 <a href="http://www.datospublicos.cl/">Datos Públicos - Una iniciativa que aporta +transparencia</a>. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
