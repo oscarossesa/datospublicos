@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>Test vuejs</title>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Test vuejs</title>        
+        <script type="text/javascript" src="Content/js/vue.min.js"></script>
     </head>
     <body>
 
@@ -9,11 +9,31 @@
             {{ message }}
         </div>
 
+        <div class="span12">
+                <center>
+                    <h1>
+                    ¿Qué está pasando hoy en MercadoPublico.cl?
+                    
+                    <br>
+                    </h1><br />
+                    
+                    <h4>
+                        <span id="spnfecha"></span> 
+                        <br>
+                        La información es actualizada cada 1 minuto.
+                    </h4>
+                    
+                    <br>
+                    
+                    
+                </center>
+            </div>
+
         <script>
             var app = new Vue({
                 el: '#app',
                 data: {
-                message: 'Hello Vue!'
+                    message: 'You loaded this page on ' + new Date().toLocaleString()
                 }
             })
         </script>
