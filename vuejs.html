@@ -59,28 +59,10 @@
                         </div>
 
                         <div id="licitaciones" class="span12">
-                            <div class="widget widget-nopad">
-                                <div class="widget-header">
-                                    <i class="icon-list-alt"></i>
-                                    <h3>{{titulo}}</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="widget big-stats-container">
-                                        <div class="widget-content">
-                                            <div v-for="indicador of indicadores" class="big_stats cf">
-                                                <div class="stat">
-                                                    <h5>{{ indicador.nombre }}</h5>
-                                                    <i class="shortcut-icon icon-bookmark"></i>
-                                                    <span class="value">{{ indicador.valor }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
-                        <div id="ordenes-de-compra" class="span12">
+                        <!--div id="ordenes-de-compra" class="span12">
                             <div class="widget widget-nopad">
                                 <div class="widget-header">
                                     <i class="icon-list-alt"></i>
@@ -100,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
 
                     </div>
                 </div>
@@ -122,44 +104,94 @@
         </div>
     </div>
 
-    <script>
+    <script>       
+
         var app = new Vue({
             el: '#licitaciones',
             data: {
                 titulo: '¿Qué está pasando hoy con las Licitaciones?',
-                indicadores: [
+                vista: [
                     {
-                        'nombre': 'Han cambiado de estado',
-                        'valor': 100
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=todos&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Han cambiado de estado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se han publicado',
-                        'valor': 5
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=publicada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se han publicado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se Han cerrado',
-                        'valor': 36
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=cerrada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se Han cerrado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se han desertado',
-                        'valor': 36
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=desierta&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se han desertado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se han adjudicado',
-                        'valor': 36
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=adjudicada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se han adjudicado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se han revocado',
-                        'valor': 36
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=revocada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se han revocado',
+                        resultado: []
                     },
                     {
-                        'nombre': 'Se han suspendido',
-                        'valor': 36
+                        uri: 'http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?estado=suspendida&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB',
+                        titulo: 'Se han suspendido',
+                        resultado: []
                     }
                 ]
-            }
-        })
+            },
+            methods: {
+
+            },
+            mounted() {
+                var vista = this.vista;
+                
+                for (var i = 0; i <= vista.length - 1; i++) {
+                    setTimeout(function (x) {
+                        return function () {
+                            fetch(vista[x].uri)
+                            .then(response => response.json())
+                            .then((data) => {
+                                vista[x].resultado = data;
+                            }) 
+                        };
+                    }(i), 3000 * i);
+                    // 1 2 3 4 5
+                }
+            },
+            template: `
+                <div class="widget widget-nopad">
+                    <div class="widget-header">
+                        <i class="icon-list-alt"></i>
+                        <h3>{{titulo}}</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div class="widget big-stats-container">
+                            <div class="widget-content">
+                                    <div v-for="v of vista" class="big_stats cf">
+                                    <div class="stat">
+                                        <h5>{{ v.titulo }}</h5>
+                                        <i class="shortcut-icon icon-bookmark"></i>
+                                        <span class="value">{{ v.resultado.Cantidad }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        });
     </script>
+
+<!--
 
     <script>
         var app2 = new Vue({
@@ -195,6 +227,8 @@
             }
         })
     </script>
+
+-->
 </body>
 
 </html>
