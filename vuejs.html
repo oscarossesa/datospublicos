@@ -1,21 +1,200 @@
-<html>
-    <head>
-        <title>Test vuejs</title>        
-        <script type="text/javascript" src="Content/js/vue.min.js"></script>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
 
-        <div id="app">
-            {{ message }}
+<head>
+    <meta charset="utf-8">
+    <title>Datos Públicos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="Content/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/pages/dashboard.css" rel="stylesheet" type="text/css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <script type="text/javascript" src="Content/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="Content/js/tether.min.js"></script>
+    <script type="text/javascript" src="Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Content/js/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="index.html">
+                    Datos Públicos
+                </a>
+            </div>
         </div>
+    </div>
+    <br />
+    <div class="main">
+        <div class="main-inner">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="span12">
+                            <center>
+                                <h1>¿Qué está pasando hoy en MercadoPublico.cl?</h1>
+                                <br>
+                                <br />
+                                <h4>
+                                    <span id="spnfecha"></span>
+                                    <br> La información es actualizada cada 1 minuto.
+                                </h4>
+                                <br>
+                            </center>
+                        </div>
 
-        <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    message: 'You loaded this page on ' + new Date().toLocaleString()
-                }
-            })
-        </script>
-    </body>
+                        <div id="licitaciones" class="span12">
+                            <div class="widget widget-nopad">
+                                <div class="widget-header">
+                                    <i class="icon-list-alt"></i>
+                                    <h3>{{titulo}}</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="widget big-stats-container">
+                                        <div class="widget-content">
+                                            <div v-for="indicador of indicadores" class="big_stats cf">
+                                                <div class="stat">
+                                                    <h5>{{ indicador.nombre }}</h5>
+                                                    <i class="shortcut-icon icon-bookmark"></i>
+                                                    <span class="value">{{ indicador.valor }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ordenes-de-compra" class="span12">
+                            <div class="widget widget-nopad">
+                                <div class="widget-header">
+                                    <i class="icon-list-alt"></i>
+                                    <h3>{{titulo}}</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="widget big-stats-container">
+                                        <div class="widget-content">
+                                            <div v-for="indicador of indicadores" class="big_stats cf">
+                                                <div class="stat">
+                                                    <h5>{{ indicador.nombre }}</h5>
+                                                    <i class="shortcut-icon icon-bookmark"></i>
+                                                    <span class="value">{{ indicador.valor }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        &copy; 2014 - 2018
+                        <a href="http://www.datospublicos.cl/">
+                            Datos Públicos - Una iniciativa que aporta +transparencia
+                        </a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#licitaciones',
+            data: {
+                titulo: '¿Qué está pasando hoy con las Licitaciones?',
+                indicadores: [
+                    {
+                        'nombre': 'Han cambiado de estado',
+                        'valor': 100
+                    },
+                    {
+                        'nombre': 'Se han publicado',
+                        'valor': 5
+                    },
+                    {
+                        'nombre': 'Se Han cerrado',
+                        'valor': 36
+                    },
+                    {
+                        'nombre': 'Se han desertado',
+                        'valor': 36
+                    },
+                    {
+                        'nombre': 'Se han adjudicado',
+                        'valor': 36
+                    },
+                    {
+                        'nombre': 'Se han revocado',
+                        'valor': 36
+                    },
+                    {
+                        'nombre': 'Se han suspendido',
+                        'valor': 36
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <script>
+        var app2 = new Vue({
+            el: '#ordenes-de-compra',
+            data: {
+                titulo: '¿Qué está pasando hoy con las Órdenes de Compra?',
+                indicadores: [
+                    {
+                        'nombre': 'Han cambiado de estado',
+                        'valor': 1
+                    },
+                    {
+                        'nombre': 'Se han enviada a proveedor',
+                        'valor': 2
+                    },
+                    {
+                        'nombre': 'Se han aceptado',
+                        'valor': 3
+                    },
+                    {
+                        'nombre': 'Se han cancelado',
+                        'valor': 4
+                    },
+                    {
+                        'nombre': 'Se han recepcionado',
+                        'valor': 5
+                    },
+                    {
+                        'nombre': 'Están pendiente de recepcionar',
+                        'valor': 6
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
 </html>
