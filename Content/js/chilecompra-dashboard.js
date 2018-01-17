@@ -52,9 +52,8 @@ function getUrl(objeto, estado) {
     var objeto = objeto;
     var estado = estado;
     var fecha = getFecha();
-    //var ticket = "D6DF9A69-2F0E-482E-B1F4-55A234C8193F"; //des
-    var ticket = "78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1"; //pro
-    host + "servicios/" + version + "/publico/" + objeto + "/" + estado + "/" + fecha + "?ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1";
+    var ticket = "C618EAC7-B4D3-49D3-B932-50D683033CFB"; 
+    host + "servicios/" + version + "/publico/" + objeto + "/" + estado + "/" + fecha + "?ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB";
     var url = host + "servicios/" + version + "/publico/" + objeto + "/" + estado + "/" + fecha + "?ticket=" + ticket;
     return url;
 }
@@ -66,7 +65,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: url,
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=todos&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=todos&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -78,7 +77,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "publicada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=publicada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=publicada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -90,7 +89,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "cerrada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=cerrada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=cerrada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -102,7 +101,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "desierta"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=desierta&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=desierta&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -114,7 +113,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "adjudicada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=adjudicada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=adjudicada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -126,7 +125,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "revocada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=revocada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=revocada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -138,7 +137,7 @@ function cargarIndicadoresLc() {
 
     $.ajax({
         //url: getUrl(objeto, "suspendida"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=suspendida&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.jsonp?estado=suspendida&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -156,7 +155,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "todos"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=todos&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=todos&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -168,7 +167,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "enviadaproveedor"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=enviadaproveedor&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=enviadaproveedor&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -180,7 +179,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "aceptada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=aceptada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=aceptada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -192,7 +191,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "cancelada"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=cancelada&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=cancelada&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -204,7 +203,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "recepcionconforme"),
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=recepcionconforme&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=recepcionconforme&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
@@ -216,7 +215,7 @@ function cargarIndicadoresOc() {
 
     $.ajax({
         //url: getUrl(objeto, "pendienterecepcion"),}
-        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=pendienterecepcion&ticket=78D4FEE6-7D6B-4EE6-85A8-6B272E237AC1",
+        url: "http://api.mercadopublico.cl/servicios/v1/publico/ordenesdecompra.jsonp?estado=pendienterecepcion&ticket=C618EAC7-B4D3-49D3-B932-50D683033CFB",
         type: "get",
         dataType: "jsonp",
         async: true,
